@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using loduApp.Models;
 
 namespace loduApp.Controllers
 {
@@ -10,6 +11,18 @@ namespace loduApp.Controllers
     {
         public IActionResult Index()
         {
+            Place p1 = new Place
+            {
+                Color = Color.Red,
+                Position = 22
+            };
+            Place p2 = new Place
+            {
+                Color = Color.Green,
+                Position = 9
+            };
+            ViewData["p1"] = p1;
+            ViewData["p2"] = p2;
             return View();
         }
 

@@ -1,14 +1,17 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+@{ 
+    var p1 = (Place)ViewData["p1"];
+    var p2 = (Place)ViewData["p2"];
+}
 
 <div class="ui blue inverted vertical masthead center aligned segment">
 
     <div class="ui text container">
 
         <h1 class="ui inverted header">
-            MVC + Semantic UI
+           @p1.Displace(p1.Color,p2.Color)  @(p1.Position+(p1.Displace(p1.Color, p2.Color))) @p1.Equal(p2) @p1.IsOnStar(p2) @p2.Equal(p1)
         </h1>
         <h2>If you build it, they will come.</h2>
         <a class="ui huge secondary button" href="http://semantic-ui.com/">
